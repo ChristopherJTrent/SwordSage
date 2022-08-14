@@ -11,6 +11,7 @@ client.once('ready', () => {
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
+	// Sudoers.json is a file containing a single JSON array containing a list of discord user IDs.
 	if (interaction.user.id in sudoers) {
 		switch (interaction.commandName) {
 			case STATUS_COMMAND:
